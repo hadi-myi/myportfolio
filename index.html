@@ -129,10 +129,9 @@ button {
 /* Mobile-specific layout */
 @media (max-width: 768px) {
   body {
-    align-items: stretch;
-    padding: 5px;
+    align-items: flex-start;
+    padding: 10px;
     background-attachment: scroll; /* Better mobile performance */
-    min-height: 100vh;
   }
   
   .window {
@@ -141,30 +140,12 @@ button {
     max-width: none;
     min-width: unset;
     max-height: none;
-    margin: 0;
-    height: calc(100vh - 10px); /* Take up nearly full screen height */
-    display: flex;
-    flex-direction: column;
+    margin-top: 0;
   }
   
   .window-body {
     max-height: none;
-    padding: 15px;
-    flex: 1; /* Take up remaining space */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Make content area fill remaining space */
-  article[role="tabpanel"] {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 0; /* Allow flexbox to work properly */
-  }
-  
-  #about .about-content {
-    flex: 1;
+    padding: 10px;
   }
   
   /* Mobile tab styling */
@@ -296,15 +277,15 @@ button {
 </article>
 
     <article role="tabpanel" id="skills" hidden>
-     
+      
     </article>
 
     <article role="tabpanel" id="projects" hidden>
-     
+
     </article>
 
     <article role="tabpanel" id="experience" hidden>
-     
+
     </article>
 
     <section class="field-row" style="justify-content: flex-end">
