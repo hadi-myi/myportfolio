@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Hadi Imtiaz Portfolio - XP.css Tabs</title>
+<link rel="stylesheet" href="https://unpkg.com/xp.css" />
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('xp_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  color: black;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.window {
+  width: 90vw;
+  max-width: 1200px;
+  min-width: 300px;
+  max-height: 90vh;
+  transform-origin: center center;
+  box-sizing: border-box;
+}
+
+/* Responsive scaling */
+@media (min-width: 1400px) {
+  .window {
+    transform: scale(1.3);
+    width: 70vw;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .window {
+    transform: scale(1.1);
+    width: 75vw;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .window {
+    transform: scale(1);
+    width: 85vw;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .window {
+    transform: scale(0.9);
+    width: 95vw;
+  }
+}
+
+@media (max-width: 599px) {
+  .window {
+    transform: scale(0.8);
+    width: 98vw;
+  }
+  
+  body {
+    padding: 10px;
+  }
+}
+
+.window-body {
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+img {
+  max-width: 150px;
+  border-radius: 8px;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Mobile image adjustments */
+@media (max-width: 599px) {
+  img {
+    max-width: 100px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.about-content {
+  overflow: hidden; /* Contains the floated image */
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  color: black;
+  margin-top: 0;
+}
+
+/* Responsive text sizing */
+@media (max-width: 599px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1rem !important;
+  }
+  
+  body {
+    font-size: 12px;
+  }
+}
+
+menu[role="tablist"] button {
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+button {
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+}
+
+/* Mobile-specific layout */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 10px;
+    background-attachment: scroll; /* Better mobile performance */
+  }
+  
+  .window {
+    transform: none !important; /* Remove scaling on mobile */
+    width: 100%;
+    max-width: none;
+    min-width: unset;
+    max-height: none;
+    margin-top: 0;
+  }
+  
+  .window-body {
+    max-height: none;
+    padding: 10px;
+  }
+  
+  /* Mobile tab styling */
+  menu[role="tablist"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-bottom: 15px;
+  }
+  
+  menu[role="tablist"] button {
+    flex: 1;
+    min-width: calc(50% - 1px);
+    font-size: 12px;
+    padding: 8px 4px;
+    text-align: center;
+  }
+  
+  /* Mobile content adjustments */
+  img {
+    float: none !important;
+    display: block;
+    margin: 0 auto 1rem auto;
+    max-width: 120px;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  .about-content p {
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  /* Mobile typography */
+  h1 {
+    font-size: 1.8rem !important;
+    text-align: center;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1rem !important;
+    text-align: center;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Mobile lists */
+  article ul {
+    padding-left: 20px;
+  }
+  
+  article li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  /* Mobile buttons */
+  .field-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch !important;
+  }
+  
+  .field-row button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small mobile adjustments */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+    padding: 5px;
+  }
+  
+  .window-body {
+    padding: 8px;
+  }
+  
+  menu[role="tablist"] button {
+    font-size: 11px;
+    padding: 6px 2px;
+  }
+  
+  h1 {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text">Hadi Imtiaz Portfolio</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <menu role="tablist">
+      <button aria-selected="true" aria-controls="about">About</button>
+      <button aria-selected="false" aria-controls="skills">Skills</button>
+      <button aria-selected="false" aria-controls="projects">Projects</button>
+      <button aria-selected="false" aria-controls="experience">Experience</button>
+    </menu>
+
+<article role="tabpanel" id="about">
+ <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Hadi Imtiaz</h1>
+ <h2 style="font-size: 1.2rem; color: #666; margin-bottom: 1.5rem;">Illinois Wesleyan Universtiy</h2>
+<div class="about-content">
+<img src="hadi2.jpg" alt="Hadi Imtiaz" />
+<p>Hi, I'm Hadi Imtiaz, a senior Computer Science major at Illinois Wesleyan University with a minor in Psychology. I'll graduate in December 2025, backed by a liberal arts education that helps me approach technology from both a technical and human perspective. My greatest strength lies in combining this technical foundation with insights from Psychology and the liberal arts, enabling me to build solutions that are not just functional but genuinely user-centered </p>
+
+<p> Currently, I'm focused on mobile development through my project Nudge, an Android app that monitors app usage in the background and nudges users with vibrations when they exceed daily limits, helping break unhealthy phone habits.
+
+  I also work at my University's Information Technology Department and I am looking forward to being a Teaching Assistant for the upcoming semester!
+</p>
+
+<p>When I'm not working on something technical, I'm usually reading, mostly philosophy and history. The Myth of Sisyphus by Albert Camus is a favorite. Outside of that, I lift, play soccer and video games, and enjoy being in nature to clear my head. </p>
+
+<p>This retro portfolio is my love letter to the first operating system I used and made me fall in love with technology! </p>
+</div>
+</article>
+
+    <article role="tabpanel" id="skills" hidden>
+      
+    </article>
+
+    <article role="tabpanel" id="projects" hidden>
+
+    </article>
+
+    <article role="tabpanel" id="experience" hidden>
+
+    </article>
+
+    <section class="field-row" style="justify-content: flex-end">
+      <a href="https://drive.google.com/file/d/1g3XDbxR01k3ypptHow8JufilyG-qK3fB/view?usp=sharing" download>
+      <button>Download Resume</button>
+       </a>
+       <a href="https://www.linkedin.com/in/hadiimtiaz2001/">
+       <button>LinkedIn</button>
+        </a>
+    </section>
+  </div>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('menu[role="tablist"] button');
+const panels = document.querySelectorAll('article[role="tabpanel"]');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+    panels.forEach(panel => panel.hidden = true);
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+  });
+});
+</script>
+</body>
+</html>

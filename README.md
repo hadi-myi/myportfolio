@@ -1,2 +1,0 @@
-# myportfolio
-Hadi's Portfolio!
