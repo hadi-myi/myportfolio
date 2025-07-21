@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hadi Imtiaz Portfolio - XP.css Tabs</title>
 <link rel="stylesheet" href="https://unpkg.com/xp.css" />
 <style>
@@ -29,7 +30,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Responsive scaling */
+/* Desktop scaling - only apply to larger screens */
 @media (min-width: 1400px) {
   .window {
     transform: scale(1.3);
@@ -51,21 +52,11 @@ body {
   }
 }
 
-@media (min-width: 600px) and (max-width: 899px) {
+/* Tablet - still use some scaling but less aggressive */
+@media (min-width: 769px) and (max-width: 899px) {
   .window {
-    transform: scale(0.9);
+    transform: scale(1);
     width: 95vw;
-  }
-}
-
-@media (max-width: 599px) {
-  .window {
-    transform: scale(0.8);
-    width: 98vw;
-  }
-  
-  body {
-    padding: 10px;
   }
 }
 
@@ -82,15 +73,6 @@ img {
   margin-bottom: 1rem;
 }
 
-/* Mobile image adjustments */
-@media (max-width: 599px) {
-  img {
-    max-width: 100px;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-}
-
 .about-content {
   overflow: hidden; /* Contains the floated image */
 }
@@ -99,21 +81,6 @@ h1, h2, h3 {
   font-weight: bold;
   color: black;
   margin-top: 0;
-}
-
-/* Responsive text sizing */
-@media (max-width: 599px) {
-  h1 {
-    font-size: 2rem !important;
-  }
-  
-  h2 {
-    font-size: 1rem !important;
-  }
-  
-  body {
-    font-size: 12px;
-  }
 }
 
 menu[role="tablist"] button {
@@ -126,41 +93,42 @@ button {
   font-size: 13px;
 }
 
-/* Mobile-specific layout */
+/* Mobile-first approach - applies to all mobile devices */
 @media (max-width: 768px) {
   body {
     align-items: flex-start;
     padding: 10px;
     background-attachment: scroll; /* Better mobile performance */
+    font-size: 14px; /* Ensure readable font size */
   }
   
   .window {
-    transform: none !important; /* Remove scaling on mobile */
-    width: 100%;
-    max-width: none;
-    min-width: unset;
-    max-height: none;
+    transform: none !important; /* Remove ALL scaling on mobile */
+    width: 100% !important;
+    max-width: none !important;
+    min-width: unset !important;
+    max-height: none !important;
     margin-top: 0;
   }
   
   .window-body {
     max-height: none;
-    padding: 10px;
+    padding: 15px;
   }
   
   /* Mobile tab styling */
   menu[role="tablist"] {
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
-    margin-bottom: 15px;
+    gap: 4px;
+    margin-bottom: 20px;
   }
   
   menu[role="tablist"] button {
     flex: 1;
-    min-width: calc(50% - 1px);
-    font-size: 12px;
-    padding: 8px 4px;
+    min-width: calc(50% - 2px);
+    font-size: 13px;
+    padding: 10px 6px;
     text-align: center;
   }
   
@@ -169,7 +137,7 @@ button {
     float: none !important;
     display: block;
     margin: 0 auto 1rem auto;
-    max-width: 120px;
+    max-width: 140px;
   }
   
   .about-content {
@@ -179,17 +147,18 @@ button {
   .about-content p {
     text-align: left;
     margin-top: 1rem;
+    line-height: 1.5;
   }
   
   /* Mobile typography */
   h1 {
-    font-size: 1.8rem !important;
+    font-size: 2rem !important;
     text-align: center;
     margin-bottom: 0.5rem !important;
   }
   
   h2 {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     text-align: center;
     margin-bottom: 1rem !important;
   }
@@ -201,41 +170,78 @@ button {
   
   article li {
     margin-bottom: 8px;
-    line-height: 1.4;
+    line-height: 1.5;
   }
   
   /* Mobile buttons */
   .field-row {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     align-items: stretch !important;
+    margin-top: 20px;
   }
   
   .field-row button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 14px;
+  }
+  
+  .field-row a {
+    width: 100%;
   }
 }
 
 /* Extra small mobile adjustments */
 @media (max-width: 480px) {
   body {
-    font-size: 13px;
-    padding: 5px;
+    padding: 8px;
   }
   
   .window-body {
-    padding: 8px;
+    padding: 12px;
+  }
+  
+  menu[role="tablist"] button {
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1rem !important;
+  }
+  
+  img {
+    max-width: 120px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  body {
+    padding: 5px;
+    font-size: 13px;
+  }
+  
+  .window-body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.6rem !important;
   }
   
   menu[role="tablist"] button {
     font-size: 11px;
-    padding: 6px 2px;
+    padding: 6px 3px;
   }
   
-  h1 {
-    font-size: 1.5rem !important;
+  img {
+    max-width: 100px;
   }
 }
 </style>
@@ -260,19 +266,18 @@ button {
 
 <article role="tabpanel" id="about">
  <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Hadi Imtiaz</h1>
- <h2 style="font-size: 1.2rem; color: #666; margin-bottom: 1.5rem;">Illinois Wesleyan Universtiy</h2>
+ <h2 style="font-size: 1.2rem; color: #666; margin-bottom: 1.5rem;">Illinois Wesleyan University</h2>
 <div class="about-content">
 <img src="hadi2.jpg" alt="Hadi Imtiaz" />
-<p>Hi, I'm Hadi Imtiaz, a senior Computer Science major at Illinois Wesleyan University with a minor in Psychology. I'll graduate in December 2025, backed by a liberal arts education that helps me approach technology from both a technical and human perspective. My greatest strength lies in combining this technical foundation with insights from Psychology and the liberal arts, enabling me to build solutions that are not just functional but genuinely user-centered </p>
+<p>Hi, I'm Hadi Imtiaz, a senior Computer Science major at Illinois Wesleyan University with a minor in Psychology. I'll graduate in December 2025, backed by a liberal arts education that helps me approach technology from both a technical and human perspective. My greatest strength lies in combining this technical foundation with insights from Psychology and the liberal arts, enabling me to build solutions that are not just functional but genuinely user-centered.</p>
 
-<p> Currently, I'm focused on mobile development through my project Nudge, an Android app that monitors app usage in the background and nudges users with vibrations when they exceed daily limits, helping break unhealthy phone habits.
+<p>Currently, I'm focused on mobile development through my project Nudge, an Android app that monitors app usage in the background and nudges users with vibrations when they exceed daily limits, helping break unhealthy phone habits.</p>
 
-  I also work at my University's Information Technology Department and I am looking forward to being a Teaching Assistant for the upcoming semester!
-</p>
+<p>I also work at my University's Information Technology Department and I am looking forward to being a Teaching Assistant for the upcoming semester!</p>
 
-<p>When I'm not working on something technical, I'm usually reading, mostly philosophy and history. The Myth of Sisyphus by Albert Camus is a favorite. Outside of that, I lift, play soccer and video games, and enjoy being in nature to clear my head. </p>
+<p>When I'm not working on something technical, I'm usually reading, mostly philosophy and history. The Myth of Sisyphus by Albert Camus is a favorite. Outside of that, I lift, play soccer and video games, and enjoy being in nature to clear my head.</p>
 
-<p>This retro portfolio is my tribute to the first operating system I used and made me fall in love with technology! </p>
+<p>This retro portfolio is my tribute to the first operating system I used and made me fall in love with technology!</p>
 </div>
 </article>
 
