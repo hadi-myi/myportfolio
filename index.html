@@ -28,6 +28,8 @@ body {
   max-height: 90vh;
   transform-origin: center center;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Desktop scaling - only apply to larger screens */
@@ -61,8 +63,9 @@ body {
 }
 
 .window-body {
-  max-height: calc(90vh - 80px);
+  flex: 1;
   overflow-y: auto;
+  max-height: calc(90vh - 80px);
 }
 
 img {
@@ -98,12 +101,12 @@ button {
   body {
     align-items: flex-start;
     padding: 10px;
-    background-attachment: scroll; /* Better mobile performance */
-    font-size: 14px; /* Ensure readable font size */
+    background-attachment: scroll; 
+    font-size: 14px; 
   }
   
   .window {
-    transform: none !important; /* Remove ALL scaling on mobile */
+    transform: none !important; /* Remove scaling on mobile */
     width: 100% !important;
     max-width: none !important;
     min-width: unset !important;
@@ -150,7 +153,6 @@ button {
     line-height: 1.5;
   }
   
-  /* Mobile typography */
   h1 {
     font-size: 2rem !important;
     text-align: center;
@@ -163,7 +165,6 @@ button {
     margin-bottom: 1rem !important;
   }
   
-  /* Mobile lists */
   article ul {
     padding-left: 20px;
   }
@@ -173,7 +174,6 @@ button {
     line-height: 1.5;
   }
   
-  /* Mobile buttons */
   .field-row {
     flex-direction: column;
     gap: 12px;
@@ -192,7 +192,7 @@ button {
   }
 }
 
-/* Extra small mobile adjustments */
+
 @media (max-width: 480px) {
   body {
     padding: 8px;
@@ -220,7 +220,7 @@ button {
   }
 }
 
-/* Very small screens */
+
 @media (max-width: 360px) {
   body {
     padding: 5px;
@@ -264,22 +264,22 @@ button {
       <button aria-selected="false" aria-controls="experience">Experience</button>
     </menu>
 
-<article role="tabpanel" id="about">
- <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Hadi Imtiaz</h1>
- <h2 style="font-size: 1.2rem; color: #666; margin-bottom: 1.5rem;">Illinois Wesleyan University</h2>
-<div class="about-content">
-<img src="hadi2.jpg" alt="Hadi Imtiaz" />
-<p>Hi, I'm Hadi Imtiaz, a senior Computer Science major at Illinois Wesleyan University with a minor in Psychology. I'll graduate in December 2025, backed by a liberal arts education that helps me approach technology from both a technical and human perspective. My greatest strength lies in combining this technical foundation with insights from Psychology and the liberal arts, enabling me to build solutions that are not just functional but genuinely user-centered.</p>
+    <article role="tabpanel" id="about">
+      <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Hadi Imtiaz</h1>
+      <h2 style="font-size: 1.2rem; color: #666; margin-bottom: 1.5rem;">Illinois Wesleyan University</h2>
+      <div class="about-content">
+        <img src="hadi2.jpg" alt="Hadi Imtiaz" />
+        <p>Hi, I'm Hadi Imtiaz, a senior Computer Science major at Illinois Wesleyan University with a minor in Psychology. I'll graduate in December 2025, backed by a liberal arts education that helps me approach technology from both a technical and human perspective. My greatest strength lies in combining this technical foundation with insights from Psychology and the liberal arts, enabling me to build solutions that are not just functional but genuinely user-centered.</p>
 
-<p>Currently, I'm focused on mobile development through my project Nudge, an Android app that monitors app usage in the background and nudges users with vibrations when they exceed daily limits, helping break unhealthy phone habits.</p>
+        <p>Currently, I'm focused on mobile development through my project Nudge, an Android app that monitors app usage in the background and nudges users with vibrations when they exceed daily limits, helping break unhealthy phone habits.</p>
 
-<p>I also work at my University's Information Technology Department and I am looking forward to being a Teaching Assistant for the upcoming semester!</p>
+        <p>I also work at my University's Information Technology Department and I am looking forward to being a Teaching Assistant for the upcoming semester!</p>
 
-<p>When I'm not working on something technical, I'm usually reading, mostly philosophy and history. The Myth of Sisyphus by Albert Camus is a favorite. Outside of that, I lift, play soccer and video games, and enjoy being in nature to clear my head.</p>
+        <p>When I'm not working on something technical, I'm usually reading, mostly philosophy and history. The Myth of Sisyphus by Albert Camus is a favorite. Outside of that, I lift, play soccer and video games, and enjoy being in nature to clear my head.</p>
 
-<p>This retro portfolio is my tribute to the first operating system I used and made me fall in love with technology!</p>
-</div>
-</article>
+        <p>This retro portfolio is my tribute to the first operating system I used and made me fall in love with technology!</p>
+      </div>
+    </article>
 
     <article role="tabpanel" id="skills" hidden>
       
