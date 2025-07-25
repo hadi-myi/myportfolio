@@ -245,6 +245,8 @@ button {
     max-width: 100px;
   }
 
+  
+
 }
 </style>
 </head>
@@ -292,14 +294,35 @@ button {
   </div>
 </article>
 
+<article role="tabpanel" id="currentwork" hidden>
+  <h1 style="font-size: 1.0rem; margin-bottom: 0.2rem;">Current Work</h1>
+  <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;">
 
-    <article role="tabpanel" id="currentwork" hidden>
-      
-    </article>
+    <div style="flex: 1 1 250px; max-width: 300px; text-align: center;">
+      <img src="nudgess1.png" alt="App Monitoring" style="width: 100%; height: auto; border-radius: 8px;" />
+      <p style="font-size: 14px; margin-top: 8px;">
+        Nudge monitors the current foreground app using the UsageStatsManager API and a persistent foreground service.
+      </p>
+    </div>
 
-    <article role="tabpanel" id="futurework" hidden>
+    <div style="flex: 1 1 250px; max-width: 300px; text-align: center;">
+      <img src="nudgeapps.png" alt="Nudge Apps List" style="width: 100%; height: auto; border-radius: 8px;" />
+      <p style="font-size: 14px; margin-top: 8px;">
+        Users choose apps to monitor and set daily usage limits.
+      </p>
+    </div>
 
-    </article>
+    <div style="flex: 1 1 250px; max-width: 300px; text-align: center;">
+      <img src="notified.png" alt="notified" style="width: 100%; height: auto; border-radius: 8px;" />
+      <p style="font-size: 14px; margin-top: 8px;">
+        When limits are exceeded, the phone vibrates and notifies the user.
+      </p>
+    </div>
+
+  </div>
+</article>
+
+
 
 
     <section class="field-row" style="justify-content: flex-end">
