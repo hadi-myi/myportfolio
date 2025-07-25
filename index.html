@@ -253,11 +253,17 @@ button {
 <div class="window">
   <div class="title-bar">
     <div class="title-bar-text">Hadi Imtiaz Portfolio</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
+<div class="title-bar-controls">
+      <button aria-label="Minimize" onclick = "goBack();"></button>
       <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+      <button aria-label="Close" onclick = "goBack();"></button>
     </div>
+    <script> 
+
+        function goBack() {
+            window.location.href = 'desktop.html'
+        }
+    </script>
   </div>
   <div class="window-body">
     <menu role="tablist">
