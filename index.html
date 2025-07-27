@@ -24,7 +24,7 @@ body {
 
 .window {
   width: 90vw;
-  max-width: 1200px;
+  max-width: 900px;
   min-width: 300px;
   max-height: 90vh;
   transform-origin: center center;
@@ -65,6 +65,7 @@ body {
 
 .window-body {
   flex: 1;
+ /* min-height: 400px; */
   overflow-y: auto;
   max-height: calc(90vh - 80px);
 }
@@ -376,10 +377,125 @@ models and achieved significant performance improvements in translation tasks. M
 
 
     </article>
+<article role="tabpanel" id="experience" hidden>
+        <h1 style="font-size: 2.0rem; margin-bottom: 0.2rem;">Relevant Work Experience</h1>
 
-    <article role="tabpanel" id="experience" hidden>
+  <ul class="exp-list">
+    <li>
+      <div class="exp-header" onclick="toggleExperience(this)">
+        <img src="greenarrowdown.png" class="exp-icon" alt="Expand Icon" />
+        <strong>Teaching Assistant | IWU Computer Science Department</strong>
+      </div>
+      <ul class="exp-details">
+        <li>Provide one-on-one and group support for courses including Algorithms, Data Structures, Computer Hardware, and Discrete Math through regular office hours</li>
+        <li>Grade 200+ assignments per semester; identifying and addressing common misconceptions</li>
+        <li>Lead hands-on lab sessions for Data Structures (C++/Java) and Digital Logic Design</li>
+      </ul>
+    </li>
 
-    </article>
+    <li>
+      <div class="exp-header" onclick="toggleExperience(this)">
+        <img src="greenarrowdown.png" class="exp-icon" alt="Expand Icon" />
+        <strong>Helpdesk Support Technician | IWU Information Technology Services</strong>
+      </div>
+      <ul class="exp-details">
+        <li>Resolve 30+ weekly technical tickets providing level 1 hardware/software support across campus</li>
+        <li>Build and deploy Windows images and manage remote support through Unified Endpoint Management systems</li>
+        <li>Develop software packages for self-service portal, streamlining application deployment for 2,000+ users</li>
+        <li>Decommission computers for donation or disposal, securely wiping data to meet compliance standards</li>
+        <li>Manage network printing infrastructure including deployment, driver management, and print server setup</li>
+        <li>Assist in managing Active Directory users, group policy application, and access permissions</li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="exp-header" onclick="toggleExperience(this)">
+        <img src="greenarrowdown.png" class="exp-icon" alt="Expand Icon" />
+        <strong>Digital Humanities / Data Intern | IWU Library Services</strong>
+      </div>
+      <ul class="exp-details">
+        <li>Mapped Florida book censorship trends using ArcGIS/OpenRefine; built WordPress site to visualize findings</li>
+      </ul>
+    </li>
+
+    <li>
+  <div class="exp-header" onclick="toggleExperience(this)">
+    <img src="greenarrowdown.png" class="exp-icon" alt="Expand Icon" />
+    <strong>President | Association for Computing Machinery at IWU</strong>
+  </div>
+  <ul class="exp-details">
+    <li>Organize events, manage chapter activities, and ensure that resources are available to support student development in computing.</li>
+    <li>Coordinate with alumni, connect with industry professionals, and facilitate workshops that enhance technical skills.</li>
+      </ul>
+</li>
+
+<li>
+  <div class="exp-header" onclick="toggleExperience(this)">
+    <img src="greenarrowdown.png" class="exp-icon" alt="Expand Icon" />
+    <strong>Web Design Intern | Books for Congo</strong>
+  </div>
+  <ul class="exp-details">
+    <li>Enhanced the website’s accessibility by implementing a multilingual interface and an interactive map using Wix CMS.</li>
+  </ul>
+</li>
+
+  </ul>
+</article>
+
+<style>
+  .exp-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .exp-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 4px;
+  }
+
+.exp-icon {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+  border-radius: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+
+  .exp-details {
+    display: none;
+    padding-left: 24px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+
+  .exp-header.open + .exp-details {
+    display: block;
+  }
+</style>
+
+<script>
+  function toggleExperience(headerEl) {
+    headerEl.classList.toggle("open");
+    const icon = headerEl.querySelector(".exp-icon");
+    if (headerEl.classList.contains("open")) {
+      icon.src = "greenarrow.png"; 
+    } else {
+      icon.src = "greenarrowdown.png";
+    }
+  }
+</script>
+
+
+
 
     <section class="field-row" style="justify-content: flex-end">
       <a href="https://drive.google.com/file/d/1g3XDbxR01k3ypptHow8JufilyG-qK3fB/view?usp=sharing" download>
