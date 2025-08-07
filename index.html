@@ -69,7 +69,21 @@ body {
   overflow-y: auto;
   max-height: calc(90vh - 80px);
 }
-
+@media (min-width: 769px) {
+  article[role="tabpanel"] {
+    min-height: 350px; 
+    overflow-y: auto;
+  }
+}
+@supports (-moz-appearance: none) {
+    /* This rule only applies in Firefox */
+    @media (min-width: 769px) {
+        article[role="tabpanel"] {
+            min-height: 430px;
+            overflow-y: auto;
+        }
+    }
+}
 img {
   max-width: 150px;
   border-radius: 8px;

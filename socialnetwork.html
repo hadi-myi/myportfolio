@@ -221,7 +221,12 @@ button {
     max-width: 120px;
   }
 }
-
+@media (min-width: 769px) {
+  article[role="tabpanel"] {
+    min-height: 420px; 
+    overflow-y: auto;
+  }
+}
 
 @media (max-width: 360px) {
   body {
@@ -286,10 +291,6 @@ button {
     </p>
   </div>
 
-     <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-      <img src="enc1.jpg" alt="Encrypted Packet 1" style="width: 80%; max-width: 400px; flex: 1; border-radius: 8px;" />
-      <img src="enc2.png" alt="Encrypted Packet 2" style="width: 80%; max-width: 400px; flex: 1; border-radius: 8px;" />
-    </div>
 </article>
 
 
