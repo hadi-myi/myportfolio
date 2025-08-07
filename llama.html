@@ -271,13 +271,33 @@ button {
     </menu>
 
     <article role="tabpanel" id="about">
-      
+     <h1 style="font-size: 2.0rem; margin-bottom: 0.2rem;">Project Summary</h1>
+  <div class="about-content">
+    <p style="font-size: 16px;">
+      This project explores fine-tuning pretrained open-source Large Language Models (LLMs) on two tasks where the base models struggle: 
+      language translation (English-Spanish) and LeetCode-style Python coding problems. 
+      Alongside this, I built and trained a character-level GPT transformer model from scratch to compare transfer learning against training from zero.
+
+
+    </p>
+
+    <p style="font-size: 16px;">
+     I fine-tuned Meta’s LLaMA 3.2 1B model using efficient techniques like LoRA and 4-bit quantization to make the process accessible on limited hardware.
+    <p style="font-size: 16px;">
+      The fine-tuned translation model performed well, achieving a BLEU score around 0.4 (compared to ~0.15 for the base model), showing fine-tuning’s practical benefits even with limited resources. 
+    </p>
+
+    <p style="font-size: 16px;">
+      This project gave me hands-on experience with Python’s <strong>Pytorch</strong> library,  <strong>Hugging Face</strong>  and <strong>LLM Fine-Tuning</strong>. 
+      It also strengthened my understanding of modern machine learning workflows, from data preprocessing and model training to evaluation and optimization.
+    </p>
+  </div>
     </article>
 
 
 
     <section class="field-row" style="justify-content: flex-end">
-      <a href="https://github.com/hadi-myi/nudge    "   >
+      <a href="https://github.com/hadi-myi/Fine-Tuning-LLaMa-3.2">
       <button>Github</button>
        </a>
         </a>
