@@ -492,6 +492,15 @@ const tabs = document.querySelectorAll('menu[role="tablist"] button');
 const panels = document.querySelectorAll('article[role="tabpanel"]');
 
 function setUniformArticleHeight() {
+  
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile) {
+   
+    panels.forEach(a => a.style.minHeight = 'auto');
+    return;
+  }
+
+  
   panels.forEach(a => a.style.minHeight = 'auto');
 
   let maxHeight = 0;
@@ -502,7 +511,6 @@ function setUniformArticleHeight() {
     a.hidden = wasHidden;
   });
 
-  // Apply uniform height
   panels.forEach(a => a.style.minHeight = maxHeight + 'px');
 }
 
@@ -512,6 +520,7 @@ tabs.forEach(tab => {
     panels.forEach(panel => panel.hidden = true);
     tab.setAttribute('aria-selected', 'true');
     document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+    
     setTimeout(setUniformArticleHeight, 50);
   });
 });
@@ -519,7 +528,11 @@ tabs.forEach(tab => {
 
 window.addEventListener('load', setUniformArticleHeight);
 window.addEventListener('resize', setUniformArticleHeight);
+
+const mq = window.matchMedia('(max-width: 768px)');
+mq.addEventListener?.('change', setUniformArticleHeight);
 </script>
+
 
 </body>
 
