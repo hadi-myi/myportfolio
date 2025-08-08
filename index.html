@@ -41,18 +41,7 @@ body {
   }
 }
 
-@media (min-width: 769px) {
-  .window {
-    width: 90vw;
-    max-width: 900px;
-  }
-  
-  
-  article[role="tabpanel"] {
-    min-height: 60000px; 
-    overflow-y: auto;
-  }
-}
+
 .window {
   width: 90vw;
   max-width: 900px; 
@@ -487,10 +476,6 @@ models and achieved significant performance improvements in translation tasks. M
     }
   }
 </script>
-
-
-
-
     <section class="field-row" style="justify-content: flex-end">
       <a href="https://drive.google.com/file/d/1g3XDbxR01k3ypptHow8JufilyG-qK3fB/view?usp=sharing" download>
       <button>Download Resume</button>
@@ -505,14 +490,37 @@ models and achieved significant performance improvements in translation tasks. M
 <script>
 const tabs = document.querySelectorAll('menu[role="tablist"] button');
 const panels = document.querySelectorAll('article[role="tabpanel"]');
+
+function setUniformArticleHeight() {
+  panels.forEach(a => a.style.minHeight = 'auto');
+
+  let maxHeight = 0;
+  panels.forEach(a => {
+    const wasHidden = a.hidden;
+    a.hidden = false; 
+    maxHeight = Math.max(maxHeight, a.scrollHeight);
+    a.hidden = wasHidden;
+  });
+
+  // Apply uniform height
+  panels.forEach(a => a.style.minHeight = maxHeight + 'px');
+}
+
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(btn => btn.setAttribute('aria-selected', 'false'));
     panels.forEach(panel => panel.hidden = true);
     tab.setAttribute('aria-selected', 'true');
     document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+    setTimeout(setUniformArticleHeight, 50);
   });
 });
+
+
+window.addEventListener('load', setUniformArticleHeight);
+window.addEventListener('resize', setUniformArticleHeight);
 </script>
+
 </body>
+
 </html>
