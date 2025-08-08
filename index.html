@@ -27,7 +27,7 @@ body {
   max-width: 900px;
   min-width: 300px;
   max-height: 90vh;
-  transform-origin: center center;
+  /* transform-origin: center center; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -41,49 +41,38 @@ body {
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1399px) {
+@media (min-width: 769px) {
   .window {
-    transform: scale(1.1);
-    width: 75vw;
+    width: 90vw;
+    max-width: 900px;
+  }
+  
+  
+  article[role="tabpanel"] {
+    min-height: 60000px; 
+    overflow-y: auto;
   }
 }
-
-@media (min-width: 900px) and (max-width: 1199px) {
-  .window {
-    transform: scale(1);
-    width: 85vw;
-  }
+.window {
+  width: 90vw;
+  max-width: 900px; 
+  min-width: 300px;
+  max-height: 90vh;
+  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Tablet - still use some scaling but less aggressive */
-@media (min-width: 769px) and (max-width: 899px) {
-  .window {
-    transform: scale(1);
-    width: 95vw;
-  }
-}
 
-.window-body {
-  flex: 1;
- /* min-height: 400px; */
-  overflow-y: auto;
-  max-height: calc(90vh - 80px);
-}
+
 @media (min-width: 769px) {
   article[role="tabpanel"] {
     min-height: 350px; 
     overflow-y: auto;
   }
 }
-@supports (-moz-appearance: none) {
-    /* This rule only applies in Firefox */
-    @media (min-width: 769px) {
-        article[role="tabpanel"] {
-            min-height: 430px;
-            overflow-y: auto;
-        }
-    }
-}
+
 img {
   max-width: 150px;
   border-radius: 8px;
